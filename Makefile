@@ -28,7 +28,7 @@ publish-dev: clean compile build-dev push-dev
 
 compile:
 	@echo "==> Building the project"
-	@env CGO_ENABLED=0 GOCACHE=/tmp/go-cache GOOS=linux GOARCH=amd64 go build -a -o cmd/moosefs-csi-plugin/${NAME} cmd/moosefs-csi-plugin/main.go
+	@env CGO_ENABLED=0 GOCACHE=/tmp/go-cache GOOS=linux go build -a -o cmd/moosefs-csi-plugin/${NAME} cmd/moosefs-csi-plugin/main.go
 
 build-dev:
 	@echo "==> Building DEV docker images"
